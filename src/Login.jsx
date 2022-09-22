@@ -27,7 +27,7 @@ const Login = () => {
    window.localStorage.setItem("expenses", JSON.stringify(data.info[1]))
     window.localStorage.setItem("budgets", JSON.stringify(data.info[0]))
    
-        alert(`Login successful${data}`)
+        alert(`Login successful${JSON.stringify(data)}`)
          // window.location.href = '/#/todo'
 
       
