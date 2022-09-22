@@ -23,6 +23,11 @@ export default function useLocalStorage(key, defaultValue) {
   //     //me an advanment i gues  
   //     }
   // },[])
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
   useEffect(() => {
     //fikrst login data then first update then download 
     //here post or put
@@ -60,12 +65,14 @@ export default function useLocalStorage(key, defaultValue) {
    // console.log("budging")
     fetch('https://mernt-budget.herokuapp.com/todo/update', {
       method: 'POST', // or 'PUT'
-      credentials: 'include',
+      credentials: "same-origin",
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-     
+     "name":getCookie("name"),
+     "pass":getCookie("pass"),
+
       "info":[value,[]]//sacar del local host
      
       }),
@@ -77,12 +84,14 @@ export default function useLocalStorage(key, defaultValue) {
   //  console.log("Expending")
     fetch('https://mernt-budget.herokuapp.com/todo/update', {
       method: 'POST', // or 'PUT'
-      credentials: 'include',
+      credentials: "same-origin",
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-  
+        "name":getCookie("name"),
+        "pass":getCookie("pass"),
+   
       "info":[[],value]//sacar del local host
      
       }),
