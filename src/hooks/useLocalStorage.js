@@ -60,7 +60,7 @@ export default function useLocalStorage(key, defaultValue) {
    // console.log("budging")
     fetch('https://mernt-budget.herokuapp.com/todo/update', {
       method: 'POST', // or 'PUT'
-      credentials: "same-origin",
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -77,7 +77,7 @@ export default function useLocalStorage(key, defaultValue) {
   //  console.log("Expending")
     fetch('https://mernt-budget.herokuapp.com/todo/update', {
       method: 'POST', // or 'PUT'
-      credentials: "same-origin",
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
