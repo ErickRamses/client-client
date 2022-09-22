@@ -80,14 +80,14 @@ useEffect(()=>{
     <div style={{backgroundColor:"rgb(27, 27, 27)",minHeight:"100vh",marginTop:"0px"}}>
       <Container className="" style={{paddingTop:"15px",}}>
         <Stack direction="horizontal" gap="2" className="mb-4">
-          <h1 className="me-auto" style={{color:"white"}}>{getCookie("name")}</h1>
+          <h1 className="me-auto" style={{color:"white"}}>{getCookie("name") || "anonymous"}</h1>
           
           <Button variant="secondary" onClick={() => setShowAddBudgetModal(true)}>
             Add Budget
           </Button>
-          {/* <Button variant="outline-primary" onClick={openAddExpenseModal}>
-            Add Expense
-          </Button> */}
+          <Button variant="outline-primary" onClick={()=>{}}>
+            {getCookie("name") ? "log in" :  "log out"}
+          </Button>
         </Stack>
         <h3 className="me-auto" style={{color:"white",marginTop:"-25px",marginBottom:"10px"}}>Budgets:</h3>
         <div
