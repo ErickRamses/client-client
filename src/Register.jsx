@@ -13,6 +13,7 @@ const Register = () => {
     if(password==passwordr){    
 		const response = await fetch('https://mernt-budget.herokuapp.com/todo/register', {
 			method: 'POST',
+      credentials: "same-origin",
 			headers: {
 				'Content-Type': 'application/json',
 			},
