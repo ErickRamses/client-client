@@ -31,8 +31,8 @@ const Login = () => {
       document.cookie=`name=${JSON.stringify(data.name)}`
       document.cookie=`pass=${JSON.stringify(data.pass)}`
 
-        alert(`Login successful${JSON.stringify(data.pass)}${JSON.stringify(data.name)}`)
-         // window.location.href = '/#/todo'
+        alert(`Login successful`)
+          window.location.href = '/#/todo'
 
       
     }else{
