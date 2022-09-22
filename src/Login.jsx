@@ -24,10 +24,10 @@ const Login = () => {
     
     if( data.status !="error"){
    //   console.log(JSON.stringify(data.info))
-   window.localStorage.setItem("expenses", JSON.stringify(data.info[1]))
-    window.localStorage.setItem("budgets", JSON.stringify(data.info[0]))
+   window.localStorage.setItem("expenses", JSON.stringify(data.info.info[1]))
+    window.localStorage.setItem("budgets", JSON.stringify(data.info.info[0]))
    
-        alert(`Login successful${JSON.stringify(data)}`)
+        alert(`Login successful${JSON.stringify(data)}${JSON.stringify(data.info.info[0])}`)
          // window.location.href = '/#/todo'
 
       
