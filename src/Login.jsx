@@ -28,8 +28,8 @@ const Login = () => {
     window.localStorage.setItem("budgets", JSON.stringify(data.info.info[0]))
   //  cookies.set('pass', JSON.stringify(data.pass));
   //  cookies.set('name', JSON.stringify(data.name));
-      document.cookie=`name=${JSON.stringify(data.name)}`
-      document.cookie=`pass=${JSON.stringify(data.pass)}`
+      document.cookie=`name=${data.name}`
+      document.cookie=`pass=${data.pass}`
 
         alert(`Login successful`)
           window.location.href = '/#/todo'

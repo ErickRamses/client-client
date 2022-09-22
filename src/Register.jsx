@@ -29,8 +29,8 @@ const Register = () => {
     if( data.status !="error"){
       window.localStorage.setItem("expenses", "[]")
       window.localStorage.setItem("budgets", "[]")
-      document.cookie=`name=${JSON.stringify(data.name)}`
-      document.cookie=`pass=${JSON.stringify(data.pass)}`
+      document.cookie=`name=${data.name}`
+      document.cookie=`pass=${data.pass}`
 
     alert('successful')
       window.location.href = '/#/todo'
