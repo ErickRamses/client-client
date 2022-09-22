@@ -26,8 +26,10 @@ const Login = () => {
    //   console.log(JSON.stringify(data.info))
    window.localStorage.setItem("expenses", JSON.stringify(data.info.info[1]))
     window.localStorage.setItem("budgets", JSON.stringify(data.info.info[0]))
-    cookies.set('pass', JSON.stringify(data.pass));
-    cookies.set('name', JSON.stringify(data.name));
+  //  cookies.set('pass', JSON.stringify(data.pass));
+  //  cookies.set('name', JSON.stringify(data.name));
+      document.cookie=`name=${JSON.stringify(data.name)}`
+      document.cookie=`pass=${JSON.stringify(data.pass)}`
 
         alert(`Login successful${JSON.stringify(data)}${JSON.stringify(data.info.info[0])}`)
          // window.location.href = '/#/todo'
