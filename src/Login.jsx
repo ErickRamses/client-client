@@ -27,8 +27,8 @@ const Login = () => {
    window.localStorage.setItem("expenses", JSON.stringify(data.info[1]))
     window.localStorage.setItem("budgets", JSON.stringify(data.info[0]))
    
-        alert('Login successful test')
-//          window.location.href = '/#/todo'
+        alert(`Login successful${data}`)
+         // window.location.href = '/#/todo'
 
       
     }else{
