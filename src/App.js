@@ -85,8 +85,14 @@ useEffect(()=>{
           <Button variant="secondary" onClick={() => setShowAddBudgetModal(true)}>
             Add Budget
           </Button>
-          <Button variant="outline-primary" onClick={()=>{}}>
-            {getCookie("name") ? "log in" :  "log out"}
+          <Button variant="outline-primary" onClick={()=>{
+                  document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+                  document.cookie = "pass=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+
+               window.location.href = '/'
+
+          }}>
+            {getCookie("name") ?  "log out" :  "log in"}
           </Button>
         </Stack>
         <h3 className="me-auto" style={{color:"white",marginTop:"-25px",marginBottom:"10px"}}>Budgets:</h3>
