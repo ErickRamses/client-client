@@ -7,8 +7,12 @@ const Register = () => {
     const [name, setname] = useState('')
 	const [password, setPassword] = useState('')
 	const [passwordr, setPasswordr] = useState('')
+  let posible=true;
 
 	async function loginUser(event) {
+    if(posible){
+      posible=false;
+     
 		event.preventDefault()
     if(password==passwordr){    
 		const response = await fetch('https://mernt-budget.herokuapp.com/todo/register', {
@@ -26,6 +30,7 @@ const Register = () => {
     //  localStorage.clear("expenses")
     //not clear reasing to []
 		const data = await response.json()
+ posible=true;
     
     if( data.status !="error"){
       window.localStorage.setItem("expenses", "[]")
@@ -46,7 +51,7 @@ const Register = () => {
 	}else{
       alert('Passwords do not match')
 
-    }
+    }}
 }
   return (
     <>

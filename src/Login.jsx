@@ -2,13 +2,17 @@ import React from 'react'
 import "./styleLogin.css"
 import { useState } from 'react'
 
+let posible=true;
+
 const Login = () => {
   const [name, setname] = useState('')
 	const [password, setPassword] = useState('')
-
 	async function loginUser(event) {
-		event.preventDefault()
-   
+    event.preventDefault()
+    
+    if(posible){
+ posible=false;
+
 		const response = await fetch('https://mernt-budget.herokuapp.com/todo/login', {
 			method: 'POST',
       credentials: "same-origin",
@@ -31,16 +35,18 @@ const Login = () => {
   //  cookies.set('name', JSON.stringify(data.name));
       document.cookie=`name=${data.name}`
       document.cookie=`pass=${data.pass}`
+      posible=true;
 
         alert(`Login successful`)
           window.location.href = '/#/todo'
 
       
     }else{
+ posible=true;
 
       alert('Invalid login')
     }
-
+  }
 	}
   return (
     <>
